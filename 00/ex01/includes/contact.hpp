@@ -1,5 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   contact.hpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/04 12:26:47 by user42            #+#    #+#             */
+/*   Updated: 2021/05/04 13:33:36 by user42           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
+
+# include <iostream>
+# include <string>
+# include <limits>
+# include <cstdlib>
+# include "colorCode.hpp"
 
 class c_contact
 {

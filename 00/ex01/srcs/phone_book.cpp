@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   phone_book.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/04 13:05:11 by user42            #+#    #+#             */
+/*   Updated: 2021/05/04 14:08:45 by user42           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "phone_book.hpp"
 
 static std::string	format_string(std::string input)
@@ -24,7 +36,7 @@ static std::string	format_string(std::string input)
 
 static void	print_main_infos(c_contact const phone_book[8])
 {
-	std::cout << "|     index|first name| last name|  nickname|" << std::endl;
+	std::cout << "|     " BYELLOW "index" NRM "|" BBLUE "first name" NRM "| " BBLUE "last name" NRM "|  " BBLUE "nickname" NRM "|" << std::endl;
 	for (int i(0); i < 8; i++)
 	{
 		std::cout << "|" << "         " << i + 1;
@@ -36,17 +48,17 @@ static void	print_main_infos(c_contact const phone_book[8])
 
 static void	search_contact(c_contact const phone_book[8])
 {
-	std::string		input;
+	std::string		input("DEFAULT");
 	int 			index(0);
 
 	print_main_infos(phone_book);
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-	while (atoi(input.c_str()) <= 0 || atoi(input.c_str()) >= 9)
+	while (std::atoi(input.c_str()) <= 0 || std::atoi(input.c_str()) >= 9
+			|| input.size() > 1)
 	{
-		std::cout << "Choose an index" << std::endl;
+		std::cout << "Choose an" BYELLOW " index" NRM << std::endl;
 		std::getline(std::cin, input);
 	}
-	index = atoi(input.c_str()) - 1;
+	index = std::atoi(input.c_str()) - 1;
 	phone_book[index].print_first_name_endl();
 	phone_book[index].print_last_name_endl();
 	phone_book[index].print_nickname_endl();
@@ -58,6 +70,7 @@ static void	search_contact(c_contact const phone_book[8])
 	phone_book[index].print_birthday_date_endl();
 	phone_book[index].print_postal_address_endl();
 	phone_book[index].print_phone_number_endl();
+	std::cout << std::endl << "You can type " BMAGENTA "add" NRM " | " BMAGENTA "search" NRM " | " BMAGENTA "exit" NRM "" << std::endl;
 }
 
 static void	add_contact(c_contact phone_book[8])
@@ -74,7 +87,6 @@ static void	add_contact(c_contact phone_book[8])
 		phone_book[index + 1].set_fill(false);
 	else if (index == 7)
 		phone_book[0].set_fill(false);
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	add_first_name(phone_book[index]);
 	add_last_name(phone_book[index]);
 	add_nickname(phone_book[index]);
@@ -87,6 +99,7 @@ static void	add_contact(c_contact phone_book[8])
 	add_postal_address(phone_book[index]);
 	add_phone_number(phone_book[index]);
 	phone_book[index].set_fill(true);
+	std::cout << std::endl << "You can type " BMAGENTA "add" NRM " | " BMAGENTA "search" NRM " | " BMAGENTA "exit" NRM "" << std::endl;
 }
 
 int		main(void)
@@ -94,11 +107,11 @@ int		main(void)
 	std::string answer;
 	c_contact	phone_book[8];
 
-	std::cout << "Welcome in your phone book!" << std::endl;
+	std::cout << BWHITE "Welcome in your" BGRN " phone book!" NRM << std::endl;
+	std::cout << std::endl << "You can type " BMAGENTA "add" NRM " | " BMAGENTA "search" NRM " | " BMAGENTA "exit" NRM "" << std::endl;
 	while (answer != "exit")
 	{
-		std::cout << std::endl << "You can type add | search | exit" << std::endl;
-		std::cin >> answer;
+		std::getline(std::cin, answer);
 		if (answer == "add")
 			add_contact(phone_book);
 		else if (answer == "search")

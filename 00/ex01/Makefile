@@ -33,7 +33,7 @@ OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
 NORMAL_OBJ = $(OBJ) $(addprefix $(OBJ_DIR)/, $(NORMAL_SRC:%.cpp=%.o))
 
 #Compilation flag
-CFLAGS = -Wall -Wextra -Werror -O3 -fsanitize=address -g3
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 IFLAGS = $(foreach dir, $(INC_DIR), -I$(dir))
 
