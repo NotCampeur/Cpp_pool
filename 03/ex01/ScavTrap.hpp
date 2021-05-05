@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 16:26:25 by user42            #+#    #+#             */
-/*   Updated: 2021/05/05 19:23:11 by user42           ###   ########.fr       */
+/*   Updated: 2021/05/05 19:22:19 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
 # include <iostream>
 # include <string>
@@ -19,7 +19,7 @@
 # include <vector>
 # include "colorCode.hpp"
 
-class FragTrap
+class ScavTrap
 {
 	private:
 		std::string		_Name;
@@ -35,17 +35,17 @@ class FragTrap
 	public:
 // CONSTRUCTORS | DESTRUCTOR
 
-						FragTrap();
-						FragTrap(std::string const &name);
-						FragTrap(FragTrap const &obj);
-						~FragTrap();
+						ScavTrap();
+						ScavTrap(std::string const &name);
+						ScavTrap(ScavTrap const &obj);
+						~ScavTrap();
 // METHODS
 
 		bool			rangedAttack(std::string const &target);
 		bool			meleeAttack(std::string const &target);
 		bool			takeDamage(unsigned int amount);
 		bool			beRepaired(unsigned int amount);
-		bool			vaulthunter_dot_exe(std::string const &target);
+		bool			challengeNewcomer(std::string const &target);
 // ACCESSORS
 	// GETTERS
 
@@ -82,7 +82,7 @@ class FragTrap
 		void			printArmorAmount(void) const;
 	// OPERATORS
 
-		FragTrap		&operator=(FragTrap const &obj);
+		ScavTrap		&operator=(ScavTrap const &obj);
 };
 
 #endif

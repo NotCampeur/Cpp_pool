@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 16:26:25 by user42            #+#    #+#             */
-/*   Updated: 2021/05/05 19:23:11 by user42           ###   ########.fr       */
+/*   Created: 2021/05/05 18:36:57 by user42            #+#    #+#             */
+/*   Updated: 2021/05/05 20:57:49 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
 # include <iostream>
 # include <string>
@@ -19,9 +19,9 @@
 # include <vector>
 # include "colorCode.hpp"
 
-class FragTrap
+class ClapTrap
 {
-	private:
+	protected:
 		std::string		_Name;
 		int				_Lvl;
 		int				_MaxHP;
@@ -35,17 +35,16 @@ class FragTrap
 	public:
 // CONSTRUCTORS | DESTRUCTOR
 
-						FragTrap();
-						FragTrap(std::string const &name);
-						FragTrap(FragTrap const &obj);
-						~FragTrap();
+						ClapTrap();
+						ClapTrap(std::string const &name);
+						ClapTrap(ClapTrap const &obj);
+				virtual	~ClapTrap();
 // METHODS
 
 		bool			rangedAttack(std::string const &target);
 		bool			meleeAttack(std::string const &target);
 		bool			takeDamage(unsigned int amount);
 		bool			beRepaired(unsigned int amount);
-		bool			vaulthunter_dot_exe(std::string const &target);
 // ACCESSORS
 	// GETTERS
 
@@ -82,7 +81,7 @@ class FragTrap
 		void			printArmorAmount(void) const;
 	// OPERATORS
 
-		FragTrap		&operator=(FragTrap const &obj);
+		ClapTrap		&operator=(ClapTrap const &obj);
 };
 
 #endif
