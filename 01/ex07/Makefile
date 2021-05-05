@@ -1,7 +1,7 @@
 NAME    = replace
 
 CC      = clang++
-CFLAGS  = -Wall -Wextra -Werror -g3 $(ARGS)
+CFLAGS  = -Wall -Wextra -Werror -std=c++98
 
 INC_DIR = $(shell find includes -type d)
 IFLAGS  = $(foreach dir, $(INC_DIR), -I$(dir))

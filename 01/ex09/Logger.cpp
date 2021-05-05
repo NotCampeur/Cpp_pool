@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Logger.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/05 10:01:35 by user42            #+#    #+#             */
+/*   Updated: 2021/05/05 10:04:10 by user42           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Logger.hpp"
 
 // CREATORS || DESTRUCTOR
@@ -28,7 +40,7 @@ void		Logger::logToFile(std::string message)
 {
 	std::ofstream file;
 
-	file.open(_file_name, std::ios::app);
+	file.open(_file_name.c_str(), std::ios::app);
 	file << makeLogEntry(message) << std::endl;
 	file.close();
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   replacer.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/09 08:51:41 by ldutriez          #+#    #+#             */
-/*   Updated: 2020/11/04 15:50:42 by ldutriez         ###   ########.fr       */
+/*   Updated: 2021/05/04 20:15:41 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,11 @@ static void	manage_files()
 	std::ofstream	output_file;
 	std::string 	current_line;
 
-	input_file.open(sys->filename());
+	input_file.open(sys->filename().c_str());
 	if (input_file.is_open() == false)
 		throw std::invalid_argument("the filename is not correct");
-	output_file.open(sys->filename() + ".replace");
+	current_line = sys->filename() + ".replace";
+	output_file.open(current_line.c_str());
 	if (output_file.is_open() == false)
 		throw std::invalid_argument("the output file can not be open");
 	while (getline(input_file, current_line))

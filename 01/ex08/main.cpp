@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/09 15:00:49 by ldutriez          #+#    #+#             */
-/*   Updated: 2020/11/05 11:11:15 by ldutriez         ###   ########.fr       */
+/*   Updated: 2021/05/05 09:52:20 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@ int		main()
 	tom.action("meleeAttack", "segfaults");
 	tom.action("rangedAttack", "leaks");
 	tom.action("intimidatingShoot", "bugs");
+	tom.action("GetOutStanding", "module01");
 	return 0;
 }

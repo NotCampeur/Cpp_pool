@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/08 09:42:34 by ldutriez          #+#    #+#             */
-/*   Updated: 2020/09/08 11:21:31 by ldutriez         ###   ########.fr       */
+/*   Updated: 2021/05/04 19:14:35 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class ZombieEvent
 {
 	private:
-	Zombie::ZombieType _type;
+	ZombieType _type;
 	
 	public:
 
@@ -29,7 +29,7 @@ class ZombieEvent
 			~ZombieEvent();
 
 // ACCESSORS
-	void	setZombieType(Zombie::ZombieType type);
+	void	setZombieType(ZombieType type);
 };
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 13:26:44 by ldutriez          #+#    #+#             */
-/*   Updated: 2020/11/02 13:26:46 by ldutriez         ###   ########.fr       */
+/*   Updated: 2021/05/04 18:34:32 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,26 +20,24 @@ void	ponyOnTheStack(int legs_nbr, int eyes_nbr, int mph)
 	stackPony.print();
 }
 
-Pony	*ponyOnTheHeap(int legs_nbr, int eyes_nbr, int mph)
+void	ponyOnTheHeap(Pony	*heapPony, int legs_nbr, int eyes_nbr, int mph)
 {
-	Pony	*heapPony;
-
 	heapPony = new Pony(legs_nbr, eyes_nbr, mph);
 	heapPony->to_mine();
 	heapPony->print();
-	return heapPony;
+	std::cout << "Address during Heap use " << heapPony << std::endl;
+	std::cout << "heap Pony has been deleted, LEAKS ARE NOT ACCEPTED"
+	<< std::endl << std::endl;
+	delete heapPony;
 }
 
 int	 main(void)
 {
-	Pony	*cyberPony;
-	
-	cyberPony = ponyOnTheHeap(86, 134, 89025);
+	Pony	*cyberPoney(NULL);
+
+	std::cout << "Address before Heap use " << cyberPoney  << std::endl << std::endl;
+	ponyOnTheHeap(cyberPoney, 86, 134, 89025);
 	ponyOnTheStack(86, 134, 89025);
-	std::cout << "The heap Pony still alive!!" << std::endl;
-	cyberPony->to_mine();
-	system("wait 2000");
-	delete cyberPony;
-	std::cout << "heap Pony has been deleted, LEAKS ARE NOT ACCEPTED" << std::endl;
+	std::cout << "Address after Heap use " << cyberPoney << std::endl;
 	return 0;
 }

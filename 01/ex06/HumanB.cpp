@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/08 16:25:30 by ldutriez          #+#    #+#             */
-/*   Updated: 2020/11/03 17:11:28 by ldutriez         ###   ########.fr       */
+/*   Updated: 2021/05/04 19:56:42 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,9 @@
 
 // CREATORS | DESTRUCTOR
 
-					HumanB::HumanB() :_name("John")
-{
-	_weapon = NULL;
-}
-
 					HumanB::HumanB(std::string name)
 {
 	_weapon = NULL;
-	_name = name;
-}
-
-					HumanB::HumanB(std::string name, Weapon &weapon)
-{
-	_weapon = &weapon;
 	_name = name;
 }
 
@@ -43,7 +32,7 @@ void				HumanB::setWeapon(Weapon &weapon)
 	_weapon = &weapon;
 }
 
-void				HumanB::setName(std::string name)
+void				HumanB::setName(std::string const &name)
 {
 	_name = name;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/08 16:25:26 by ldutriez          #+#    #+#             */
-/*   Updated: 2020/11/13 15:33:36 by ldutriez         ###   ########.fr       */
+/*   Updated: 2021/05/04 20:00:33 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,43 +14,30 @@
 
 // CREATORS | DESTRUCTOR
 
-					HumanA::HumanA() :_name("John")
+					HumanA::HumanA(std::string name, Weapon &weapon) : _weapon(weapon)
 {
-	_weapon = NULL;
-}
-
-					HumanA::HumanA(std::string name)
-{
-	_weapon = NULL;
-	_name = name;
-}
-
-					HumanA::HumanA(std::string name, Weapon &weapon)
-{
-	_weapon = &weapon;
 	_name = name;
 }
 
 					HumanA::~HumanA()
 {
-	delete _weapon;
 }
 
 // ACCESSORS
 
 void				HumanA::setWeapon(Weapon &weapon)
 {
-	_weapon = &weapon;
+	_weapon = weapon;
 }
 
-void				HumanA::setName(std::string name)
+void				HumanA::setName(std::string const &name)
 {
 	_name = name;
 }
 
 Weapon const		&HumanA::getWeapon(void) const
 {
-	return *_weapon;
+	return _weapon;
 }
 
 std::string	const	&HumanA::getName(void) const
@@ -62,5 +49,5 @@ std::string	const	&HumanA::getName(void) const
 
 void				HumanA::attack() const
 {
-	std::cout << _name << " strike with " << _weapon->getType() << std::endl;
+	std::cout << _name << " strike with " << _weapon.getType() << std::endl;
 }

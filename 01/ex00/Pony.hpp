@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Pony.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 13:26:21 by ldutriez          #+#    #+#             */
-/*   Updated: 2020/11/02 13:26:38 by ldutriez         ###   ########.fr       */
+/*   Updated: 2021/05/04 18:17:13 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,6 @@ class Pony
 };
 
 void					ponyOnTheStack(int legs_nbr = 0,int eyes_nbr = 0, int mph = 0);
-Pony					*ponyOnTheHeap(int legs_nbr = 0,int eyes_nbr = 0, int mph = 0);
+void					onyOnTheHeap(int legs_nbr = 0,int eyes_nbr = 0, int mph = 0);
 
 #endif

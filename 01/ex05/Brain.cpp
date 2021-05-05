@@ -3,31 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/08 14:00:38 by ldutriez          #+#    #+#             */
-/*   Updated: 2020/11/03 16:30:53 by ldutriez         ###   ########.fr       */
+/*   Updated: 2021/05/04 19:39:11 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Brain.hpp"
 
-	Brain::Brain()
+			Brain::Brain()
 {
-
 }
 
-	Brain::~Brain()
+			Brain::~Brain()
 {
-
 }
 
 std::string	Brain::identify(void) const
 {
 	std::stringstream	str_stream;
-    std::string 		result;
     
     str_stream << this;
-	result = str_stream.str();
-    return result;
+    return str_stream.str();
 }

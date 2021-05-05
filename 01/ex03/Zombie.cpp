@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 12:23:01 by ldutriez          #+#    #+#             */
-/*   Updated: 2020/09/08 11:19:26 by ldutriez         ###   ########.fr       */
+/*   Updated: 2021/05/04 19:26:40 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
 }
 
 // ACCESSORS
-Zombie::ZombieType	Zombie::type(void) const
+ZombieType			Zombie::type(void) const
 {
 	return _type;
 }
@@ -45,21 +45,21 @@ std::string			Zombie::type_str(void) const
 {
 	std::string result("Basic");
 
-	if (_type == ZombieType::boomer)
+	if (_type == boomer)
 		result.assign("Boomer");
-	else if (_type == ZombieType::hunter)
+	else if (_type == hunter)
 		result.assign("Hunter");
-	else if (_type == ZombieType::smoker)
+	else if (_type == smoker)
 		result.assign("Smoker");
-	else if (_type == ZombieType::tank)
+	else if (_type == tank)
 		result.assign("Tank");
-	else if (_type == ZombieType::charger)
+	else if (_type == charger)
 		result.assign("Charger");
-	else if (_type == ZombieType::jockey)
+	else if (_type == jockey)
 		result.assign("Jockey");
-	else if (_type == ZombieType::spitter)
+	else if (_type == spitter)
 		result.assign("Spitter");
-	else if (_type == ZombieType::witch)
+	else if (_type == witch)
 		result.assign("Witch");
 	return result;
 }

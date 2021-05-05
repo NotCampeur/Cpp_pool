@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/08 16:25:06 by ldutriez          #+#    #+#             */
-/*   Updated: 2020/09/09 08:24:11 by ldutriez         ###   ########.fr       */
+/*   Updated: 2021/05/04 19:46:14 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Weapon
 
 	std::string const	&getType() const;
 
-	void				setType(std::string type);
+	void				setType(std::string const &type);
 };
 
 #endif
