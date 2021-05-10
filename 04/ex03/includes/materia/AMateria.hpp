@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 13:52:19 by user42            #+#    #+#             */
-/*   Updated: 2021/05/08 14:00:22 by user42           ###   ########.fr       */
+/*   Updated: 2021/05/10 15:29:06 by ldutriez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,20 @@
 # define AMATERIA_HPP
 
 # include <string>
+# include <iostream>
 # include "ICharacter.hpp"
 
 class AMateria
 {
 	protected:
 		unsigned int		_xp;
+		std::string			_Type;
 							AMateria();
 
 	public:
 							AMateria(std::string const &type);
 							AMateria(AMateria const &obj);
-							~AMateria();
+		virtual				~AMateria();
 
 		std::string const	&getType() const;
 		unsigned int		getXP() const;

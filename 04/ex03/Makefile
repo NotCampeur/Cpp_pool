@@ -1,7 +1,7 @@
 NAME    = tester
 
 CC      = clang++
-CFLAGS  = -Wall -Wextra -Werror -std=c++98
+CFLAGS  = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
 
 INC_DIR = $(shell find includes -type d)
 IFLAGS  = $(foreach dir, $(INC_DIR), -I$(dir))
@@ -11,6 +11,8 @@ SRC_DIR = $(shell find srcs -type d)
 vpath %.cpp $(foreach dir, $(SRC_DIR), $(dir):)
 
 SRCS    =	main.cpp \
+			Character.cpp \
+			AMateria.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 
 OBJ_DIR = obj
 OBJ     = $(addprefix $(OBJ_DIR)/, $(SRCS:%.cpp=%.o))

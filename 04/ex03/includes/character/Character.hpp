@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 20:06:38 by user42            #+#    #+#             */
-/*   Updated: 2021/05/08 20:43:14 by user42           ###   ########.fr       */
+/*   Updated: 2021/05/10 15:25:00 by ldutriez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,18 @@
 
 # include <string>
 # include <vector>
-# include "ICharacter.hpp"
 # include "AMateria.hpp"
+# include "ICharacter.hpp"
 
 class Character : public ICharacter
 {
 	private:
-		std::vector<AMateria*>	_Materias;
+		AMateria				*_Materias[4];
+		std::string				_Name;
 								Character();
 
 	public:
+								Character(std::string const &name);
 								Character(Character const &obj);
 								~Character();
 
@@ -32,7 +34,7 @@ class Character : public ICharacter
 
 		void					equip(AMateria *m);
 		void					unequip(int idx);
-		void					use(int idx, Character& target);
+		void					use(int idx, ICharacter &target);
 
 		Character 				&operator=(Character const &obj);
 };
