@@ -35,6 +35,9 @@ $(NAME):		$(OBJ) $(INC_DIR)
 				@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 				@rm -rf $(OBJ_DIR)
 
+test:			all
+				@./$(NAME)
+				
 re:				fclean all
 
 clean:
