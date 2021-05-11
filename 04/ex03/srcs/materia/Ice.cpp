@@ -6,7 +6,7 @@
 /*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 12:10:59 by ldutriez          #+#    #+#             */
-/*   Updated: 2021/05/10 15:38:06 by ldutriez         ###   ########.fr       */
+/*   Updated: 2021/05/11 13:50:54 by ldutriez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 
 Ice					*Ice::clone() const
 {
-	return (new Ice);
+	return (new Ice(*this));
 }
 
 void				Ice::use(ICharacter &target)

@@ -6,7 +6,7 @@
 /*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 13:34:20 by ldutriez          #+#    #+#             */
-/*   Updated: 2021/05/10 16:15:00 by ldutriez         ###   ########.fr       */
+/*   Updated: 2021/05/11 13:49:35 by ldutriez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@
 
 				MateriaSource::~MateriaSource()
 {
+	for (int i(0); i < 4; i++)
+		if (_Learned_m[i] != NULL)
+			delete _Learned_m[i];
 }
 
 void			MateriaSource::learnMateria(AMateria *materia)
@@ -42,10 +45,7 @@ AMateria		*MateriaSource::createMateria(std::string const &type)
 {
 	for (int i(0); i < 4; i++)
 		if (_Learned_m[i] != NULL && _Learned_m[i]->getType() == type)
-		{
-			return _Learned_m[i];
-			i = 4;
-		}
+			return _Learned_m[i]->clone();
 	return NULL;
 }
 

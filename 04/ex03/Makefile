@@ -1,7 +1,7 @@
 NAME    = tester
 
 CC      = clang++
-CFLAGS  = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
+CFLAGS  = -Wall -Wextra -Werror -std=c++98
 
 INC_DIR = $(shell find includes -type d)
 IFLAGS  = $(foreach dir, $(INC_DIR), -I$(dir))
@@ -33,6 +33,9 @@ $(OBJ_DIR)/%.o : %.cpp
 $(NAME):		$(OBJ) $(INC_DIR) 
 				@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 				@rm -rf $(OBJ_DIR)
+
+test:			all
+				@./$(NAME)
 
 re:				fclean all
 

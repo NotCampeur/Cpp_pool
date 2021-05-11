@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Squad.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 19:14:14 by user42            #+#    #+#             */
-/*   Updated: 2021/05/08 13:27:55 by user42           ###   ########.fr       */
+/*   Updated: 2021/05/11 14:53:50 by ldutriez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 #include <string>
 #include <iostream>
-#include <vector>
 #include "ISquad.hpp"
 
 class Squad : public ISquad
 {
 	private:
-		std::vector<ISpaceMarine*>	_Units;
+		ISpaceMarine	**_Units;
+		unsigned int	_Size;
 		
 	public:
 						Squad();

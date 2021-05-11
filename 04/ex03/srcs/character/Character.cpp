@@ -6,7 +6,7 @@
 /*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 20:25:19 by user42            #+#    #+#             */
-/*   Updated: 2021/05/10 16:23:35 by ldutriez         ###   ########.fr       */
+/*   Updated: 2021/05/11 14:03:59 by ldutriez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ std::string const	&Character::getName() const
 void				Character::equip(AMateria *m)
 {
 	if (m != NULL)
-		for (int i(0); i < 4; i++)
+		for (int i(0); i < 4 && _Materias[i] != m; i++)
 			if (_Materias[i] == NULL)
 			{
 				_Materias[i] = m;

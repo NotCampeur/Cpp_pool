@@ -6,7 +6,7 @@
 /*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 12:10:59 by ldutriez          #+#    #+#             */
-/*   Updated: 2021/05/10 15:37:49 by ldutriez         ###   ########.fr       */
+/*   Updated: 2021/05/11 13:51:04 by ldutriez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 
 Cure				*Cure::clone() const
 {
-	return (new Cure);
+	return (new Cure(*this));
 }
 
 void				Cure::use(ICharacter &target)

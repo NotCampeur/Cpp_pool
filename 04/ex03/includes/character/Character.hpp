@@ -6,7 +6,7 @@
 /*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 20:06:38 by user42            #+#    #+#             */
-/*   Updated: 2021/05/10 15:25:00 by ldutriez         ###   ########.fr       */
+/*   Updated: 2021/05/11 14:46:24 by ldutriez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define CHARACTER_HPP
 
 # include <string>
-# include <vector>
 # include "AMateria.hpp"
 # include "ICharacter.hpp"
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Squad.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 19:46:26 by user42            #+#    #+#             */
-/*   Updated: 2021/05/08 13:45:33 by user42           ###   ########.fr       */
+/*   Updated: 2021/05/11 16:36:39 by ldutriez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 				Squad::Squad() : ISquad()
 {
-	_Units.clear();
+	_Units = NULL;
+	_Size = 0;
 }
 
 				Squad::Squad(Squad const &obj)
@@ -24,48 +25,58 @@
 
 				Squad::~Squad()
 {
-	size_t	size(_Units.size());
-	
-	for (size_t i(0); i < size; i++)
-		delete _Units[i];
-	_Units.clear();
+	if (_Units != NULL)
+	{
+		for (unsigned int i(0); i < _Size; i++)
+			delete _Units[i];
+		delete[] _Units;
+	}
 }
 
-int		Squad::getCount() const
+int				Squad::getCount() const
 {
-	return static_cast <int> (_Units.size());
+	return _Size;
 }
 
 ISpaceMarine	*Squad::getUnit(int index) const
 {
-	if (index >= 0)
+	if (index >= 0 && index < (int)_Size)
 		return _Units[index];
 	return NULL;
 }
 
 int				Squad::push(ISpaceMarine *marine)
 {
-	bool	is_present(false);
-	size_t	size(_Units.size());
+	bool			is_present(false);
+	ISpaceMarine	**tmp;
 
 	if (marine != NULL)
 	{
-		for(size_t i(0); i < size && is_present == false; i++)
+		for(unsigned int i(0); i < _Size && is_present == false; i++)
 			if (marine == _Units[i])
 				is_present = true;
 		if (is_present == false)
-			_Units.push_back(marine);
+		{
+			_Size++;
+			tmp = new ISpaceMarine*[_Size];
+			for(unsigned int i(0); i < _Size - 1; i++)
+				tmp[i] = _Units[i];
+			tmp[_Size - 1] = marine;
+			if (_Units != NULL)
+				delete[] _Units;
+			_Units = tmp;
+		}
 	}
-	return _Units.size();
+	return _Size;
 }
 
-Squad	&Squad::operator=(Squad const &obj)
+Squad			&Squad::operator=(Squad const &obj)
 {
-	size_t	size(_Units.size());
 	
-	for (size_t i(0); i < size; i++)
+	for (size_t i(0); i < _Size; i++)
 		delete _Units[i];
-	_Units.clear();
-	size = obj.getCount();
+	delete _Units;
+	_Units = obj._Units;
+	_Size = obj._Size;
 	return *this;
 }
