@@ -6,7 +6,7 @@
 /*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 17:21:03 by ldutriez          #+#    #+#             */
-/*   Updated: 2021/05/12 15:04:00 by ldutriez         ###   ########.fr       */
+/*   Updated: 2021/05/12 16:00:20 by ldutriez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,14 @@ void				Bureaucrat::decrementGrade(void)
 		_Grade++;
 	else
 		throw Bureaucrat::GradeTooLowException(_Name + " can't have a lower grade");
+}
+
+void				Bureaucrat::signForm(const Form &form) const
+{
+	if (_Grade < form.gradeToSign())
+		std::cout << _Name << " signs " << form.Name() << std::endl;
+	else
+		throw Form::GradeTooLowException("his grade is too low");
 }
 
 Bureaucrat			&Bureaucrat::operator=(Bureaucrat const &obj)
