@@ -1,44 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 16:11:05 by ldutriez          #+#    #+#             */
-/*   Updated: 2021/05/12 20:26:31 by user42           ###   ########.fr       */
+/*   Updated: 2021/05/12 20:16:09 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
-						RobotomyRequestForm::RobotomyRequestForm()
-					: Form("RobotomyRequestForm", 72, 45)
+						PresidentialPardonForm::PresidentialPardonForm()
+					: Form("PresidentialPardonForm", 25, 5)
 {
 }
 
-						RobotomyRequestForm::RobotomyRequestForm(std::string target)
-					: Form("RobotomyRequestForm", 72, 45)
+						PresidentialPardonForm::PresidentialPardonForm(std::string target)
+					: Form("PresidentialPardonForm", 25, 5)
 {
 	_Target = target;
 }
 
-						RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &obj)
+						PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &obj)
 					: Form(obj)
 {
 }
 
-						RobotomyRequestForm::~RobotomyRequestForm()
+						PresidentialPardonForm::~PresidentialPardonForm()
 {
 }
 
-void					RobotomyRequestForm::execute(const Bureaucrat &executor) const
+void					PresidentialPardonForm::execute(const Bureaucrat &executor) const
 {
 	try
 	{
 		executor.executeForm(*this);
-		std::cout << "* Drill noise *\n...\n" << _Target
-		<< " has been SUCCESSFULLY robotmised by " << executor.getName() << std::endl;
+		std::cout << executor.getName() << " contact Zaphod Beeblebrox. " << _Target
+		<< " has been pardoned!" << std::endl;
 	}
 	catch(const Bureaucrat::GradeTooLowException& e)
 	{
@@ -51,11 +51,11 @@ void					RobotomyRequestForm::execute(const Bureaucrat &executor) const
 	}
 }
 
-RobotomyRequestForm	&RobotomyRequestForm::operator=(RobotomyRequestForm const &obj)
+PresidentialPardonForm	&PresidentialPardonForm::operator=(PresidentialPardonForm const &obj)
 {
 	if (this != &obj)
 	{
-		RobotomyRequestForm *result = new RobotomyRequestForm(obj);
+		PresidentialPardonForm *result = new PresidentialPardonForm(obj);
 		return *result;
 	}
 	return *this;

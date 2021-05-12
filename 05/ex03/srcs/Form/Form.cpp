@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 17:21:03 by ldutriez          #+#    #+#             */
-/*   Updated: 2021/05/12 20:26:02 by user42           ###   ########.fr       */
+/*   Updated: 2021/05/12 21:52:46 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ unsigned int		Form::gradeToSign(void) const
 	return _gradeToSign;
 }
 
-unsigned int		Form::gradeToExec(void) const
+unsigned int	Form::gradeToExec(void) const
 {
 	return _gradeToExec;
 }

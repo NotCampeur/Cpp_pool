@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 16:04:13 by ldutriez          #+#    #+#             */
-/*   Updated: 2021/05/12 20:02:53 by user42           ###   ########.fr       */
+/*   Updated: 2021/05/12 22:22:49 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-# define SHRUBBERYCREATIONFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+# define PRESIDENTIALPARDONFORM_HPP
 
 #include <string>
 #include <fstream>
 # include "Form.hpp"
 
-class ShrubberyCreationForm : public Form
+class PresidentialPardonForm : public Form
 {
-		std::string					_Target;
-									ShrubberyCreationForm();
+		std::string				_Target;
+								PresidentialPardonForm();
 	public:
-									ShrubberyCreationForm(std::string target);
-									ShrubberyCreationForm(const ShrubberyCreationForm &obj);
-									~ShrubberyCreationForm();
+								PresidentialPardonForm(std::string target);
+								PresidentialPardonForm(const PresidentialPardonForm &obj);
+								~PresidentialPardonForm();
 
-		void						execute(const Bureaucrat &executor) const;
+		void					execute(const Bureaucrat &executor) const;
 
-		ShrubberyCreationForm		&operator=(const ShrubberyCreationForm &obj);
+		static Form				*alloc(std::string target);
+
+		PresidentialPardonForm	&operator=(const PresidentialPardonForm &obj);
 };
 
 #endif

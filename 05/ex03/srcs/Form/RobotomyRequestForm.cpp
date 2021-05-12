@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 16:11:05 by ldutriez          #+#    #+#             */
-/*   Updated: 2021/05/12 20:26:31 by user42           ###   ########.fr       */
+/*   Updated: 2021/05/12 21:56:34 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,11 @@ void					RobotomyRequestForm::execute(const Bureaucrat &executor) const
 	{
 		std::cerr << e.what() << '\n';
 	}
+}
+
+Form	*RobotomyRequestForm::alloc(std::string target)
+{
+	return new RobotomyRequestForm(target);
 }
 
 RobotomyRequestForm	&RobotomyRequestForm::operator=(RobotomyRequestForm const &obj)

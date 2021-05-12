@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 16:04:13 by ldutriez          #+#    #+#             */
-/*   Updated: 2021/05/12 20:02:53 by user42           ###   ########.fr       */
+/*   Updated: 2021/05/12 22:22:32 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-# define SHRUBBERYCREATIONFORM_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+# define ROBOTOMYREQUESTFORM_HPP
 
 #include <string>
 #include <fstream>
 # include "Form.hpp"
 
-class ShrubberyCreationForm : public Form
+class RobotomyRequestForm : public Form
 {
-		std::string					_Target;
-									ShrubberyCreationForm();
+		std::string			_Target;
+							RobotomyRequestForm();
 	public:
-									ShrubberyCreationForm(std::string target);
-									ShrubberyCreationForm(const ShrubberyCreationForm &obj);
-									~ShrubberyCreationForm();
+							RobotomyRequestForm(std::string target);
+							RobotomyRequestForm(const RobotomyRequestForm &obj);
+							~RobotomyRequestForm();
 
-		void						execute(const Bureaucrat &executor) const;
-
-		ShrubberyCreationForm		&operator=(const ShrubberyCreationForm &obj);
+		void				execute(const Bureaucrat &executor) const;
+		
+		static Form			*alloc(std::string target);
+		
+		RobotomyRequestForm	&operator=(const RobotomyRequestForm &obj);
 };
 
 #endif
