@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 13:33:59 by user42            #+#    #+#             */
-/*   Updated: 2021/05/07 19:05:39 by user42           ###   ########.fr       */
+/*   Updated: 2021/05/13 09:42:35 by ldutriez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int main()
 {
 	Character	*me = new Character("me");
 
+	me->recoverAP();
 	std::cout << *me;
 
 	Enemy		*b = new RadScorpion();

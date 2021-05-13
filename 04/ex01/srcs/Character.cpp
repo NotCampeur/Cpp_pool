@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 16:50:39 by user42            #+#    #+#             */
-/*   Updated: 2021/05/07 19:02:05 by user42           ###   ########.fr       */
+/*   Updated: 2021/05/13 09:46:11 by ldutriez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ void			Character::attack(Enemy *enemy)
 		else
 		{
 			_AP += _Current_Weapon->getApCost();
+			std::cout << _Name << " fails due to the lack of AP. (Need " << _Current_Weapon->getApCost()
+			<< " have " << _AP << ")" << std::endl;
 		}
 	}
 }

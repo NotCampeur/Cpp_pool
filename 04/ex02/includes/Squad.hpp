@@ -6,7 +6,7 @@
 /*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 19:14:14 by user42            #+#    #+#             */
-/*   Updated: 2021/05/11 14:53:50 by ldutriez         ###   ########.fr       */
+/*   Updated: 2021/05/13 10:55:46 by ldutriez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ class Squad : public ISquad
 		int				push(ISpaceMarine *marine);
 
 		Squad			&operator=(Squad const &obj);
+		ISquad			&operator=(ISquad const &obj);
 };
 
 #endif

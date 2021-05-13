@@ -6,7 +6,7 @@
 /*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 19:46:26 by user42            #+#    #+#             */
-/*   Updated: 2021/05/11 16:36:39 by ldutriez         ###   ########.fr       */
+/*   Updated: 2021/05/13 11:01:05 by ldutriez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,11 +72,12 @@ int				Squad::push(ISpaceMarine *marine)
 
 Squad			&Squad::operator=(Squad const &obj)
 {
-	
 	for (size_t i(0); i < _Size; i++)
 		delete _Units[i];
 	delete _Units;
-	_Units = obj._Units;
 	_Size = obj._Size;
+	_Units = new ISpaceMarine*[_Size];
+	for (size_t i(0); i < _Size; i++)
+		_Units[i] = obj._Units[i]->clone();
 	return *this;
 }
