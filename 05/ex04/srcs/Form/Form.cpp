@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 17:21:03 by ldutriez          #+#    #+#             */
-/*   Updated: 2021/05/15 20:22:55 by user42           ###   ########.fr       */
+/*   Updated: 2021/05/15 20:27:37 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,12 @@ void			Form::beSigned(const Bureaucrat &Bureaucrat)
 		Bureaucrat.signForm(*this);
 		_isSigned = true;
 	}
-	catch (const std::exception& e)
+	catch (const Bureaucrat::GradeTooLowException& e)
 	{
 		std::cerr << Bureaucrat.getName() << " can't sign " << _Name
 		<< " because " << e.what() << " (" << _gradeToSign << " required "
 		<< Bureaucrat.getName() << " has " << Bureaucrat.getGrade() << ")\n";
+		throw Bureaucrat::GradeTooLowException("Shame to the Signer");
 	}
 }
 

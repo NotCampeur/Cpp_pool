@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 16:11:05 by ldutriez          #+#    #+#             */
-/*   Updated: 2021/05/12 20:16:09 by user42           ###   ########.fr       */
+/*   Updated: 2021/05/15 20:17:00 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 						PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &obj)
 					: Form(obj)
 {
+	_Target = obj._Target;
 }
 
 						PresidentialPardonForm::~PresidentialPardonForm()
@@ -55,8 +56,7 @@ PresidentialPardonForm	&PresidentialPardonForm::operator=(PresidentialPardonForm
 {
 	if (this != &obj)
 	{
-		PresidentialPardonForm *result = new PresidentialPardonForm(obj);
-		return *result;
+		_Target = obj._Target;
 	}
 	return *this;
 }

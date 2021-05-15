@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 16:11:05 by ldutriez          #+#    #+#             */
-/*   Updated: 2021/05/15 20:19:51 by user42           ###   ########.fr       */
+/*   Updated: 2021/05/15 20:32:01 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,11 +82,17 @@ void					ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 	{
 		std::cerr << e.what() << " (needed " << _gradeToExec << " actual "
 		<< executor.getGrade() << ")\n";
+		throw Bureaucrat::GradeTooLowException("Shame to the Executor");
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
+}
+
+Form	*ShrubberyCreationForm::alloc(std::string target)
+{
+	return new ShrubberyCreationForm(target);
 }
 
 ShrubberyCreationForm	&ShrubberyCreationForm::operator=(ShrubberyCreationForm const &obj)

@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 16:11:05 by ldutriez          #+#    #+#             */
-/*   Updated: 2021/05/15 20:23:47 by user42           ###   ########.fr       */
+/*   Updated: 2021/05/15 20:28:42 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void					PresidentialPardonForm::execute(const Bureaucrat &executor) const
 	{
 		std::cerr << e.what() << " (needed " << _gradeToExec << " actual "
 		<< executor.getGrade() << ")\n";
+		throw Bureaucrat::GradeTooLowException("Shame to the Executor");
 	}
 	catch(const std::exception& e)
 	{

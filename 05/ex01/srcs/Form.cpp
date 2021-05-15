@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 17:21:03 by ldutriez          #+#    #+#             */
-/*   Updated: 2021/05/12 15:59:28 by ldutriez         ###   ########.fr       */
+/*   Updated: 2021/05/15 20:12:40 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,7 @@ Form			&Form::operator=(Form const &obj)
 {
 	if (this != &obj)
 	{
-		Form *result = new Form(obj._Name, obj._gradeToSign, obj._gradeToExec);
-		return *result;
+		_isSigned = obj._isSigned;
 	}
 	return *this;
 }

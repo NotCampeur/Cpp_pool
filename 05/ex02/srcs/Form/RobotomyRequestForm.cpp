@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 16:11:05 by ldutriez          #+#    #+#             */
-/*   Updated: 2021/05/12 20:26:31 by user42           ###   ########.fr       */
+/*   Updated: 2021/05/15 20:19:06 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 						RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &obj)
 					: Form(obj)
 {
+	_Target = obj._Target;
 }
 
 						RobotomyRequestForm::~RobotomyRequestForm()
@@ -55,8 +56,7 @@ RobotomyRequestForm	&RobotomyRequestForm::operator=(RobotomyRequestForm const &o
 {
 	if (this != &obj)
 	{
-		RobotomyRequestForm *result = new RobotomyRequestForm(obj);
-		return *result;
+		_Target = obj._Target;
 	}
 	return *this;
 }

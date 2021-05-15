@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 16:11:05 by ldutriez          #+#    #+#             */
-/*   Updated: 2021/05/12 21:56:59 by user42           ###   ########.fr       */
+/*   Updated: 2021/05/15 20:24:56 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 						ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &obj)
 					: Form(obj)
 {
+	_Target = obj._Target;
 }
 
 						ShrubberyCreationForm::~ShrubberyCreationForm()
@@ -98,8 +99,7 @@ ShrubberyCreationForm	&ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 {
 	if (this != &obj)
 	{
-		ShrubberyCreationForm *result = new ShrubberyCreationForm(obj);
-		return *result;
+		_Target = obj._Target;
 	}
 	return *this;
 }

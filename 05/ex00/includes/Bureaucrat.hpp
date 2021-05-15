@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 17:10:46 by ldutriez          #+#    #+#             */
-/*   Updated: 2021/05/11 18:05:10 by ldutriez         ###   ########.fr       */
+/*   Updated: 2021/05/15 20:08:42 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Bureaucrat
 {
 	private:
-		std::string const	_Name;
+		const std::string	_Name;
 		unsigned int		_Grade;
 							Bureaucrat();
 

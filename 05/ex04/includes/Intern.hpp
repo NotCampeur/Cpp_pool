@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 20:36:29 by user42            #+#    #+#             */
-/*   Updated: 2021/05/15 20:07:31 by user42           ###   ########.fr       */
+/*   Updated: 2021/05/15 20:07:14 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Intern
 
 		Intern	&operator=(const Intern &obj);
 
-				class BadFormRequest : public std::exception
+		class BadFormRequest : public std::exception
 		{
 				std::string	_msg;
 			public:

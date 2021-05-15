@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 17:21:03 by ldutriez          #+#    #+#             */
-/*   Updated: 2021/05/12 15:04:00 by ldutriez         ###   ########.fr       */
+/*   Updated: 2021/05/15 20:10:13 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@
 }
 
 					Bureaucrat::Bureaucrat(Bureaucrat const &obj)
+					: _Name(obj._Name), _Grade(obj._Grade)
 {
-	*this = obj;
 }
 
 					Bureaucrat::~Bureaucrat()
@@ -66,8 +66,7 @@ Bureaucrat			&Bureaucrat::operator=(Bureaucrat const &obj)
 {
 	if (this != &obj)
 	{
-		Bureaucrat *result = new Bureaucrat(obj._Name, obj._Grade);
-		return *result;
+		_Grade = obj._Grade;
 	}
 	return *this;
 }
