@@ -1,4 +1,4 @@
-NAME    = caster
+NAME    = identifier
 
 CC      = clang++
 CFLAGS  = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
@@ -10,8 +10,7 @@ SRC_DIR = $(shell find srcs -type d)
 
 vpath %.cpp $(foreach dir, $(SRC_DIR), $(dir):)
 
-SRCS    =	main.cpp \
-			conversion.cpp checks.cpp printers.cpp
+SRCS    =	main.cpp
 
 OBJ_DIR = obj
 OBJ     = $(addprefix $(OBJ_DIR)/, $(SRCS:%.cpp=%.o))
@@ -34,22 +33,6 @@ $(NAME):		$(OBJ) $(INC_DIR)
 				@rm -rf $(OBJ_DIR)
 
 test:			all
-				@./$(NAME) 0
-				@echo
-				@./$(NAME) nan
-				@echo
-				@./$(NAME) 42.0f
-				@echo
-				@./$(NAME) 'T'
-				@echo
-				@./$(NAME) -inf
-				@echo
-				@./$(NAME) +inff
-				@echo
-				@./$(NAME) -idwafwanf
-				@echo
-				@./$(NAME) \'
-				@echo
 				@./$(NAME)
 
 re:				fclean all
