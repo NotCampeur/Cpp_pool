@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 16:26:45 by ldutriez          #+#    #+#             */
-/*   Updated: 2021/05/19 11:06:15 by user42           ###   ########.fr       */
+/*   Updated: 2021/05/19 12:09:55 by ldutriez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Mutantstack.hpp"
+#include "mutantstack.hpp"
 #include <iostream>
 
 void	stack_tests(void)
@@ -82,6 +82,7 @@ void	mutantstack_tests(void)
 		std::cout << *rit << std::endl;
 		++rit;
 	}
+	std::stack<int> s(mstack);
 }
 
 int	main()

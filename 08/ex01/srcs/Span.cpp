@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 19:25:59 by user42            #+#    #+#             */
-/*   Updated: 2021/05/18 11:56:56 by user42           ###   ########.fr       */
+/*   Updated: 2021/05/19 13:46:50 by ldutriez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,26 +52,21 @@ void				Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iter
 	}
 }
 
+#include <iostream>
+
 unsigned int		Span::shortestSpan() const
 {
-	unsigned int	min = UINT_MAX;
+	std::vector<int>			tmp(_content);
+	long int					min = LONG_MAX;
+	std::vector<int>::size_type	size(tmp.size());
 
 	if (_act_size <= 1)
-		throw Span::notEnoughValues();	
-	std::vector<int>::const_iterator i = _content.begin();
-	std::vector<int>::const_iterator j;
-	std::vector<int>::const_iterator end = _content.end();
-	for (; i < end; ++i)
-		for (j = i + 1; j < end ; ++j)
-			if (*i > *j)
-			{
-				if ((unsigned int)*i - (unsigned int)*j < min && *i - *j >= 0)
-					min = *i - *j;
-			}
-			else
-				if ((unsigned int)*j - (unsigned int)*i < min && *j - *i >= 0)
-					min = *j - *i;
-	return min;
+		throw Span::notEnoughValues();
+	std::sort(tmp.begin(), tmp.end());
+	for (size_t i(0); i < (size - 1); i++)
+		if ((long int)tmp[i + 1] - (long int)tmp[i] < min)
+			min = (long int)tmp[i + 1] - (long int)tmp[i];
+	return static_cast<unsigned int>(min);
 }
 
 unsigned int		Span::longestSpan() const
