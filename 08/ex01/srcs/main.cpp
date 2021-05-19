@@ -6,11 +6,11 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 16:26:45 by ldutriez          #+#    #+#             */
-/*   Updated: 2021/05/17 21:04:13 by user42           ###   ########.fr       */
+/*   Updated: 2021/05/18 11:57:00 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "span.hpp"
+#include "Span.hpp"
 #include <iostream>
 #include <cstdlib>
 
@@ -45,13 +45,15 @@ void	small_span_tests(void)
 {
 	try
 	{
-		Span sp = Span(5);
+		Span sp = Span(7);
 		
 		sp.addNumber(5);
 		sp.addNumber(3);
 		sp.addNumber(17);
 		sp.addNumber(9);
 		sp.addNumber(11);
+		sp.addNumber(-8);
+		sp.addNumber(-7);
 
 		std::cout << std::endl << "The shortest span found : " << sp.shortestSpan() << std::endl;
 		std::cout << "The longest span found : " << sp.longestSpan() << std::endl;

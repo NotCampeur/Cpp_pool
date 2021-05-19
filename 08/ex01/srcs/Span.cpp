@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   span.cpp                                           :+:      :+:    :+:   */
+/*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 19:25:59 by user42            #+#    #+#             */
-/*   Updated: 2021/05/17 20:54:50 by user42           ###   ########.fr       */
+/*   Updated: 2021/05/18 11:56:56 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "span.hpp"
+#include "Span.hpp"
 
 					Span::Span()
 {
@@ -63,8 +63,14 @@ unsigned int		Span::shortestSpan() const
 	std::vector<int>::const_iterator end = _content.end();
 	for (; i < end; ++i)
 		for (j = i + 1; j < end ; ++j)
-			if ((unsigned int)*i - (unsigned int)*j < min && *i - *j >= 0)
-				min = *i - *j;
+			if (*i > *j)
+			{
+				if ((unsigned int)*i - (unsigned int)*j < min && *i - *j >= 0)
+					min = *i - *j;
+			}
+			else
+				if ((unsigned int)*j - (unsigned int)*i < min && *j - *i >= 0)
+					min = *j - *i;
 	return min;
 }
 

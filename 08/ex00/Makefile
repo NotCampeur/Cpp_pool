@@ -1,7 +1,7 @@
-NAME    = array
+NAME    = finder
 
 CC      = clang++
-CFLAGS  = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
+CFLAGS  = -Wall -Wextra -Werror -std=c++98
 
 INC_DIR = $(shell find includes -type d)
 IFLAGS  = $(foreach dir, $(INC_DIR), -I$(dir))
