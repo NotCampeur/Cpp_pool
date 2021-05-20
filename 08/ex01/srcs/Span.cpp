@@ -6,7 +6,7 @@
 /*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 19:25:59 by user42            #+#    #+#             */
-/*   Updated: 2021/05/19 13:46:50 by ldutriez         ###   ########.fr       */
+/*   Updated: 2021/05/20 11:57:22 by ldutriez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,6 @@ void				Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iter
 	}
 }
 
-#include <iostream>
-
 unsigned int		Span::shortestSpan() const
 {
 	std::vector<int>			tmp(_content);
@@ -71,13 +69,13 @@ unsigned int		Span::shortestSpan() const
 
 unsigned int		Span::longestSpan() const
 {
-	unsigned int	result(0);
+	long int	result(0);
 
 	if (_act_size <= 1)
 		throw Span::notEnoughValues();	
-	result = static_cast<unsigned int>(*std::max_element(_content.begin(), _content.end()));
-	result -= static_cast<unsigned int>(*std::min_element(_content.begin(), _content.end()));
-	return result;
+	result = static_cast<long int>(*std::max_element(_content.begin(), _content.end()));
+	result = result - static_cast<long int>(*std::min_element(_content.begin(), _content.end()));
+	return static_cast<unsigned int>(result);
 }
 
 Span				&Span::operator=(const Span &to_assign)
